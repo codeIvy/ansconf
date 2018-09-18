@@ -1,0 +1,13 @@
+---
+# tasks file for anemone, installing apache
+- name: anemone is installing apache2
+  apt: name=apache2 update_cache=yes
+  notify: 
+    - apache restart nota
+
+- name: index.html placing
+  copy: src=index.html dest={{website_root}}
+
+- name: phpinfo.php placing
+  copy: src=info-php-file.php dest={{website_root}}
+

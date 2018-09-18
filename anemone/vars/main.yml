@@ -1,0 +1,4 @@
+---
+# vars file for anemone, get default index here
+   website_root: /var/www/html/
+   

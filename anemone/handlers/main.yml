@@ -1,0 +1,6 @@
+---
+# handlers file for anemone, this should restart apache
+- name: apache restart nota
+  service:
+   name: apache2
+   state: restarted
