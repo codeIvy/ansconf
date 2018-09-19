@@ -1,0 +1,4 @@
+- hosts: awsbuntu
+  become: yes
+  roles:
+   - anemone

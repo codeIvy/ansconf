@@ -11,3 +11,11 @@
 - name: phpinfo.php placing
   copy: src=info-php-file.php dest={{website_root}}
 
+- name: create website root
+  file:
+   path: /var/www/{{apache_domain}}/public_html
+   state: directory
+   mode: 0755
+
+- name: virtal hosts update with example1.tld
+  template: src=apache_default.j2 dest=/etc/apache2/sites-available/{{apache_domain}}.conf owner=ubuntu group=ubuntu
