@@ -1,5 +1,6 @@
 ---
 # vars file for anemone, get default index here
-   website_root: /var/www/html/
-   apache_domain: example1.tld
-   apache_domain2: example2.tld
+  host_virtuales:  
+   - { domain: "first-domain.tld", docroot: "/var/www/first-domain.tld/" }
+   - { domain: "second-domain.tld", docroot: "/var/www/second-domain.tld/" }
+  website_root: /var/www/html/

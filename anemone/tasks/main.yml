@@ -13,15 +13,12 @@
 
 - name: create website root
   file:
-   path: /var/www/{{ item }}/public_html
+   path: "{{ item.docroot }}"
    state: directory
    mode: 0755
-  with_items:
-   - "{{apache_domain}}"
-   - "{{apache_domain2}}"
-- name: virtal hosts update with example1.tld
-  template: src=apache_default.j2 dest=/etc/apache2/sites-available/{{ item }}.conf owner=ubuntu group=ubuntu
-  with_items:
-   - "{{apache_domain}}"
-   - "{{apache_domain2}}"
+  with_items: "{{host_virtuales}}"
+
+- name: virtal hosts update with example websites
+  template: src=apache_default.j2 dest=/etc/apache2/sites-available/{{ item.domain }}.conf owner=ubuntu group=ubuntu
+  with_items: "{{host_virtuales}}"
 
