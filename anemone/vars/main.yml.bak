@@ -1,0 +1,5 @@
+---
+# vars file for anemone, get default index here
+   website_root: /var/www/html/
+   apache_domain: example1.tld
+   apache_domain2: example2.tld

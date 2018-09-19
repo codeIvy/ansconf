@@ -1,0 +1,8 @@
+---
+# vars file for wolfbug
+ m_users:
+  - { un: "Alice", pw: "alpha" }
+  - { un: "Bob", pw: "beta" }
+ db_list:
+   - very first one
+   - such second

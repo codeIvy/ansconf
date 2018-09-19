@@ -1,0 +1,6 @@
+- hosts: awsbuntu
+  become: yes
+  roles:
+   - anemone
+   - strider
+   - wolfbug

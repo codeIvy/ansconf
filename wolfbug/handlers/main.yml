@@ -1,0 +1,8 @@
+---
+# handlers file for wolfbug
+- name: mysql restart nota
+  service:
+   name: mysql
+   state: restarted
+
+

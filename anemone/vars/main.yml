@@ -4,3 +4,5 @@
    - { domain: "first-domain.tld", docroot: "/var/www/first-domain.tld/" }
    - { domain: "second-domain.tld", docroot: "/var/www/second-domain.tld/" }
   website_root: /var/www/html/
+
+# to-do: add lookup from inventory file

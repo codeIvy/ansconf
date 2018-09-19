@@ -1,0 +1,24 @@
+---
+# tasks file for wolfbug, installing mysql-server here + add user and DB
+
+- name: install python mysqldb 
+  apt: name=python-mysqldb
+
+- name: wolfbug is installing mysql-server
+  apt: name=mysql-server update_cache=yes 
+  notify: mysql restart nota
+
+- name: now some DBs should be added
+  mysql_db:
+   name: "{{ item }}"
+   state: present
+  with_items: "{{ db_list }}"
+
+- name: it is time to add users with all priveleges to all databases
+  mysql_user:
+   name: "{{ item.un }}"
+   password: "{{ item.pw }}"
+   host: localhost
+   priv: '*.*:ALL'
+   state: present
+  with_items: "{{ m_users }}"

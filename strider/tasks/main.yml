@@ -1,0 +1,7 @@
+---
+# tasks file for strider
+- name: strider is installing PHP
+  apt: name=php update_cache=yes state=latest
+  
+- name: fetching php.ini file
+  copy: src=php.ini dest=/etc/php/7.0/apache2/
